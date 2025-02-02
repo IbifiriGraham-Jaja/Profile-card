@@ -35,11 +35,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const isExpanded = moreInfoBtn.getAttribute('aria-expanded') === 'true';
 
         if (isExpanded) {
-            aboutMeSection.classList.add('hidden'); // Hide About Me
+            // Hide About Me section with transition
+            aboutMeSection.classList.add('hidden');
+            aboutMeSection.classList.remove('show');
             moreInfoBtn.setAttribute('aria-expanded', 'false');
             moreInfoBtn.innerText = 'More Info';
         } else {
-            aboutMeSection.classList.remove('hidden'); // Show About Me
+            // Show About Me section with transition
+            aboutMeSection.classList.remove('hidden');
+            setTimeout(() => aboutMeSection.classList.add('show'), 10); // delay to trigger transition
             moreInfoBtn.setAttribute('aria-expanded', 'true');
             moreInfoBtn.innerText = 'Less Info';
         }

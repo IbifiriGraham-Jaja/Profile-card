@@ -18,44 +18,28 @@
         
         <!-- Profile Banner -->
         <header class="banner">
-            <div class="profile-pic">
+            <div class="profile-pic" data-testid="profilePicture">
                 <img src="Ibifiri black and white.jpeg" alt="Ibifiri Graham-Jaja's Profile Picture">
             </div>
         </header>
 
         <!-- Main Content -->
         <article class="content">
-            <h1 class="name">Ibifiri Graham-Jaja</h1>
-            <p class="title">Frontend Developer / Virtual Assistant</p>
+            <!-- Full Name -->
+            <h1 class="name" data-testid="fullName">Ibifiri Graham-Jaja</h1>
 
-            <!-- Skill Set -->
-            <div class="skills">
-                <span class="skill">HTML</span>
-                <span class="skill">CSS</span>
-                <span class="skill">JavaScript</span>
-                <span class="skill">React</span>
-                <span class="skill">Git</span>
-                <span class="skill">Vue.js</span>
+            <!-- Job Title -->
+            <p class="title" data-testid="jobTitle">Frontend Developer / Virtual Assistant</p>
             </div>
 
-            <!-- Stats -->
-            <div class="stats">
-                <div class="stat">
-                    <div class="stat-number">8</div>
-                    <div class="stat-label">Projects</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">100</div>
-                    <div class="stat-label">Commits</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">6</div>
-                    <div class="stat-label">PRs</div>
-                </div>
-            </div>
+            <!-- Location -->
+            <p class="location" data-testid="currentLocation">Port Harcourt, Nigeria</p>
+
+              <!-- Current Time in UTC -->
+              <p class="utc-time" data-testid="utcTime" id="utc-time">Loading...</p>
 
             <!-- Social Links -->
-            <div class="links">
+            <div class="links" data-testid="socialLinks">
                 <a href="https://github.com/IbifiriGraham-Jaja" class="link" target="_blank" rel="noopener noreferrer" title="GitHub Profile">
                     <i class="fab fa-github"></i> GitHub
                 </a>
@@ -74,13 +58,26 @@
             <div id="about-me" class="about-me hidden">
                 <h2>About Me</h2>
                 <p>
-                    I am a passionate frontend developer with experience in React, Next.js, and Vue.js. 
-                    I love crafting clean and functional web interfaces with a focus on user experience.
+                    Hi, I'm Ibifiri Graham-Jaja, a frontend developer specializing in React, Next.js, TypeScript, and Tailwind CSS. 
+                    With a background in petrochemical engineering, I blend analytical skills with creativity to build intuitive, responsive applications.
+                    
+                      I'm always eager to learn and grow, delivering high-quality solutions that add value to businesses.
                 </p>
             </div>
         </article>
         
     </section>
+
+    <script>
+        // JavaScript to display current time in UTC
+        function updateTime() {
+            const utcTime = new Date().toISOString();
+            document.getElementById('utc-time').innerText = utcTime;
+        }
+
+        // Update time every second
+        setInterval(updateTime, 1000);
+    </script>
 
 </body>
 </html>
